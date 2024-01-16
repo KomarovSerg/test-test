@@ -7,9 +7,9 @@
  
 ## Использование 
 1. Установить Postman (https://www.postman.com/downloads/) на свой компьютер 
-2. Скачайть текущую коллекцию. 
+2. Скачать текущую коллекцию. 
 3. Импортировать коллекцию в Postman. 
-4. В Autorization добавьте Bearer Token - ваш токен GitHub. 
+4. В Autorization добавить Bearer Token - ваш токен GitHub. 
  
  
 ## Переменные среды 
@@ -18,8 +18,7 @@
 - owner - ваш логин на GitHub. 
 - GitHub - api GitHub: https://api.github.com/ 
  
- 
- 
+  
 ## Описание запросов 
    1. Создание issue: 
    - Описание: Создает новую задачу в репозитории GitHub. 
