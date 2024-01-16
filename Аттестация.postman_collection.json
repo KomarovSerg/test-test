@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "976a0c96-604d-410d-8960-4cb769982c73",
+		"name": "Аттестация",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27955424"
+	},
+	"item": [
+		{
+			"name": "Создать Issue 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Issue 1\",\r\n    \"body\": \"Something went wrong\",\r\n    \"labels\": [\"bug\"],\r\n    \"assignees\": [\"KomarovSerg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{owner}}/{{repo}}/issues",
+					"host": [
+						"{{baseUrl}}{{owner}}"
+					],
+					"path": [
+						"{{repo}}",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список issues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{myToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}{{owner}}/{{repo}}/issues",
+					"host": [
+						"{{baseUrl}}{{owner}}"
+					],
+					"path": [
+						"{{repo}}",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить название задачи на Issue 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Issue 2\",\r\n    \"body\": \"Something went wrong\",\r\n    \"labels\": [\"bug\"],\r\n    \"assignees\": [\"KomarovSerg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{owner}}/{{repo}}/issues/4",
+					"host": [
+						"{{baseUrl}}{{owner}}"
+					],
+					"path": [
+						"{{repo}}",
+						"issues",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить Issue 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{owner}}/{{repo}}/issues/4",
+					"host": [
+						"{{baseUrl}}{{owner}}"
+					],
+					"path": [
+						"{{repo}}",
+						"issues",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "myToken",
+			"value": "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",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://api.github.com/repos/",
+			"type": "string"
+		},
+		{
+			"key": "owner",
+			"value": "KomarovSerg",
+			"type": "string"
+		},
+		{
+			"key": "repo",
+			"value": "test-test",
+			"type": "string"
+		}
+	]
+}
