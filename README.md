@@ -16,7 +16,7 @@
 - myToken - ваш токен GitHub. 
 - repo  - название вашего репозитория. 
 - owner - ваш логин на GitHub. 
-- GitHub - api GitHub: https://api.github.com/ 
+- baseUrl - API GitHub: https://api.github.com/ 
  
   
 ## Описание запросов 
