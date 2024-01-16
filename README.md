@@ -37,13 +37,15 @@
    - Путь: /repos/{owner}/{repo}/issues/{issue_number} 
    - Метод: DELETE 
  
-В Запросах 'POST'  'PATCH' используется  
-Body { 
+В Запросах 'POST' и 'PATCH' используется Body:
+```
+{ 
   "title": "Issue", 
   "body": "Something went wrong.", 
   "labels": ["bug"], 
   "assignees": ["Ваш логин на GitHub"] 
-} 
+}
+```
 ## 
 Ссылка на Git 
 https://github.com/KomarovSerg/test-test.git
